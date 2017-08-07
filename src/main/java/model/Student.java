@@ -1,40 +1,44 @@
 package model;
 
+/**
+ * 类成员方法有变量的set和get方法和自定义的构造方法，toString方法
+ */
 public class Student {
+    //实体类的属性和表的字段名称一一对应
     private String name;
     private Integer qq;
     private String type;
-    private String time;
+    private Long time;
     private String school;
     private Integer number;
     private String link;
     private String hope;
     private String referrer;
-    private String from;
+    private String fromWhere;
     private Integer id;
-    private Integer create_at;
-    private Integer update_at;
-    public Student(){
-        super();
-        //TODO Auto-generated constructor stub
+    private Long createAt;
+    private Long updateAt;
+
+    /**
+     * 重新定义构造方法
+     */
+    public void Student(String name,Integer qq,String type,Long time,String school,Integer number,String link,String hope,
+                        String referrer,String fromWhere,Integer id,Long createAt,Long updateAt){
+        this.name=name;
+        this.qq=qq;
+        this.type=type;
+        this.time=time;
+        this.school=school;
+        this.number=number;
+        this.link=link;
+        this.hope=hope;
+        this.referrer=referrer;
+        this.fromWhere=fromWhere;
+        this.id=id;
+        this.createAt=createAt;
+        this.updateAt=updateAt;
     }
-    public Student(String name,Integer qq,String type,String time,String school,Integer number,String link,String hope,
-                   String referrer,String from,Integer id,Integer create_at,Integer update_at){
-        super();
-        this.name = name;
-        this.qq = qq;
-        this.type = type;
-        this.time = time;
-        this.school = school;
-        this.number = number;
-        this.link = link;
-        this.hope = hope;
-        this.referrer = referrer;
-        this.from = from;
-        this.id = id;
-        this.create_at = create_at;
-        this.update_at = update_at;
-    }
+    //类成员变量的Set与get方法
 
     public String getName() {
         return name;
@@ -60,11 +64,11 @@ public class Student {
         this.type = type;
     }
 
-    public String getTime() {
+    public Long getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Long time) {
         this.time = time;
     }
 
@@ -108,12 +112,12 @@ public class Student {
         this.referrer = referrer;
     }
 
-    public String getFrom() {
-        return from;
+    public String getFromWhere() {
+        return fromWhere;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setFromWhere(String fromWhere) {
+        this.fromWhere = fromWhere;
     }
 
     public Integer getId() {
@@ -124,38 +128,39 @@ public class Student {
         this.id = id;
     }
 
-    public Integer getCreate_at() {
-        return create_at;
+    public Long getCreateAt() {
+        return createAt;
     }
 
-    public void setCreate_at(Integer create_at) {
-        this.create_at = create_at;
+    public void setCreateAt(Long createAt) {
+        this.createAt = createAt;
     }
 
-    public Integer getUpdate_at() {
-        return update_at;
+    public Long getUpdateAt() {
+        return updateAt;
     }
 
-    public void setUpdate_at(Integer update_at) {
-        this.update_at = update_at;
+    public void setUpdateAt(Long updateAt) {
+        this.updateAt = updateAt;
     }
 
+    //重构toString方法
     @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", qq=" + qq +
                 ", type='" + type + '\'' +
-                ", time='" + time + '\'' +
+                ", time=" + time +
                 ", school='" + school + '\'' +
                 ", number=" + number +
                 ", link='" + link + '\'' +
                 ", hope='" + hope + '\'' +
                 ", referrer='" + referrer + '\'' +
-                ", from='" + from + '\'' +
+                ", fromWhere='" + fromWhere + '\'' +
                 ", id=" + id +
-                ", create_at=" + create_at +
-                ", update_at=" + update_at +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
                 '}';
     }
 }
