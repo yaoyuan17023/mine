@@ -1,10 +1,9 @@
-package model;
+package com.springmybatis.model;
 
 /**
- * 类成员方法有变量的set和get方法和自定义的构造方法，toString方法
+ * created by 姚远 on 2017/8/8.
  */
-public class Student {
-    //实体类的属性和表的字段名称一一对应
+public class StudentMod {
     private String name;
     private Integer qq;
     private String type;
@@ -14,31 +13,27 @@ public class Student {
     private String link;
     private String hope;
     private String referrer;
-    private String fromWhere;
+    private String from_where;
     private Integer id;
-    private Long createAt;
-    private Long updateAt;
+    private Long create_at;
+    private Long update_at;
 
-    /**
-     * 重新定义构造方法
-     */
-    public void Student(String name,Integer qq,String type,Long time,String school,Integer number,String link,String hope,
-                        String referrer,String fromWhere,Integer id,Long createAt,Long updateAt){
-        this.name=name;
-        this.qq=qq;
-        this.type=type;
-        this.time=time;
-        this.school=school;
-        this.number=number;
-        this.link=link;
-        this.hope=hope;
-        this.referrer=referrer;
-        this.fromWhere=fromWhere;
-        this.id=id;
-        this.createAt=createAt;
-        this.updateAt=updateAt;
+    public void StudentMod(String name, Integer qq, String type, Long time, String school, Integer number, String link, String hope,
+                           String referrer, String from_where, Integer id, Long create_at, Long update_at) {
+        this.name = name;
+        this.qq = qq;
+        this.type = type;
+        this.time = time;
+        this.school = school;
+        this.number = number;
+        this.link = link;
+        this.hope = hope;
+        this.referrer = referrer;
+        this.from_where = from_where;
+        this.id = id;
+        this.create_at = create_at;
+        this.update_at = update_at;
     }
-    //类成员变量的Set与get方法
 
     public String getName() {
         return name;
@@ -112,12 +107,12 @@ public class Student {
         this.referrer = referrer;
     }
 
-    public String getFromWhere() {
-        return fromWhere;
+    public String getFrom_where() {
+        return from_where;
     }
 
-    public void setFromWhere(String fromWhere) {
-        this.fromWhere = fromWhere;
+    public void setFrom_where(String from_where) {
+        this.from_where = from_where;
     }
 
     public Integer getId() {
@@ -128,26 +123,25 @@ public class Student {
         this.id = id;
     }
 
-    public Long getCreateAt() {
-        return createAt;
+    public Long getCreate_at() {
+        return create_at;
     }
 
-    public void setCreateAt(Long createAt) {
-        this.createAt = createAt;
+    public void setCreate_at(Long create_at) {
+        this.create_at = create_at;
     }
 
-    public Long getUpdateAt() {
-        return updateAt;
+    public Long getUpdate_at() {
+        return update_at;
     }
 
-    public void setUpdateAt(Long updateAt) {
-        this.updateAt = updateAt;
+    public void setUpdate_at(Long update_at) {
+        this.update_at = update_at;
     }
 
-    //重构toString方法
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentMod{" +
                 "name='" + name + '\'' +
                 ", qq=" + qq +
                 ", type='" + type + '\'' +
@@ -157,10 +151,10 @@ public class Student {
                 ", link='" + link + '\'' +
                 ", hope='" + hope + '\'' +
                 ", referrer='" + referrer + '\'' +
-                ", fromWhere='" + fromWhere + '\'' +
+                ", from_where='" + from_where + '\'' +
                 ", id=" + id +
-                ", createAt=" + createAt +
-                ", updateAt=" + updateAt +
+                ", create_at=" + create_at +
+                ", update_at=" + update_at +
                 '}';
     }
 }

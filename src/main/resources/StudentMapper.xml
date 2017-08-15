@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springmybatis.Mapper.StudentMapper">
+    <select id="studySelect" parameterType="String" resultType="com.springmybatis.model.StudentMod">
+        SELECT * FROM student WHERE id = #{id}
+    </select>
+    <insert id="studyInsert" parameterType="com.springmybatis.model.StudentMod" useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO student(name,qq,type,time,school,number,link,hope,referrer,from_where,id,create_at,update_at)
+        values(#{name},#{qq},#{type},#{time},#{school},#{number},#{link},#{hope},#{referrer},#{from_where},#{id},#{create_at},#{update_at})
+    </insert>
+    <delete id="studyDelete" parameterType="String">
+        DELETE FROM student WHERE id = #{id}
+    </delete>
+    <update id="studyUpdate" parameterType="com.springmybatis.model.StudentMod">
+        UPDATE student set name=#{name},update_at=#{update_at} WHERE id = #{id}
+    </update>
+    <select id="studentName" parameterType="String" resultType="com.springmybatis.model.StudentMod">
+        SELECT * FROM student
+    </select>
+</mapper>
