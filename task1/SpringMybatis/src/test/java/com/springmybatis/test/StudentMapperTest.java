@@ -23,7 +23,7 @@ public class StudentMapperTest {
 
     //对ctx进行标注，完成自动配装的工作
     @Autowired
-    ApplicationContext ctx;
+    ApplicationContext  ctx;
 
     //所有测试开始前执行
     @BeforeClass
@@ -57,8 +57,8 @@ public class StudentMapperTest {
             //getBean() 方法得到所需要的 bean
             StudentMapper studentMapper = (StudentMapper) ctx.getBean("studentMapper");
             StudentMod studentMod = new StudentMod();
-            studentMod.setId(2);
-            studentMapper.studySelect(studentMod);
+            studentMod.setName("yao");
+            studentMod = studentMapper.studySelect(studentMod);
             loggerTest.info("输出查询结果\n" + studentMod);
         }
         catch (Exception e){

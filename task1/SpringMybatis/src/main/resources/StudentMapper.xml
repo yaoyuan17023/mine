@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springmybatis.Mapper.StudentMapper">
     <select id="studySelect" parameterType="String" resultType="com.springmybatis.model.StudentMod">
-        SELECT * FROM student WHERE id = #{id}
+        SELECT * FROM student WHERE name = #{name}
     </select>
     <insert id="studyInsert" parameterType="com.springmybatis.model.StudentMod" useGeneratedKeys="true"
             keyProperty="id">
