@@ -71,7 +71,7 @@
                     <td>${stu.create_at}</td>
                     <td>${stu.update_at}</td>
                     <td><a href="${pageContext.request.contextPath}/u/${stu.id}">Edit</a></td>
-                    <td><a class="delete" href="/d/${stu.id}">Delete</a></td>
+                    <td><a class="delete" href="${pageContext.request.contextPath}/d/${stu.id}">Delete</a></td>
                     <%--<td><a onclick="del(${stu.id})" href="javascript:void(0)">删除</a></td>--%>
 
                 </tr>
