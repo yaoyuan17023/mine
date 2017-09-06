@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!-- http://tiles.apache.org/framework/config-reference.html -->
+<tiles-definitions>
+    <definition name="task4-head" template="/WEB-INF/pages/module/header.jsp">
+        <put-attribute name="cssresources" value="/WEB-INF/pages/module/css.jsp"/>
+    </definition>
+
+    <definition name="task4-h" extends="task4-head">
+        <put-attribute name="title" value="King Of Word"/>
+    </definition>
+
+    <definition name="task4-footer" template="/WEB-INF/pages/module/footer.jsp">
+        <put-attribute name="jsresources" value="/WEB-INF/pages/module/js.jsp" />
+    </definition>
+
+    <definition name="task4-f" extends="task4-footer">
+        <put-attribute name="title" value="King Of Word" />
+    </definition>
+
+    <!-- 测试用的 -->
+
+</tiles-definitions>
