@@ -158,7 +158,7 @@
                         <img src="${students.picture}">
                         <span>${students.job}：${students.name}</span>
                         <p class="text-left">${students.profession}:${students.introduce}</p>
-                            <p class="text-left"><date:date  name="入学时间" value ="${students.createAt}"/></p>
+                            
                     </div>
                 </li>
             </c:forEach>
