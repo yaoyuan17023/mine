@@ -1,6 +1,6 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="/WEB-INF/tld/datetag.tld" prefix="date"%>
+
 <%--
   Created by IntelliJ IDEA.
   User: 姚远
@@ -158,7 +158,7 @@
                         <img src="${students.picture}">
                         <span>${students.job}：${students.name}</span>
                         <p class="text-left">${students.profession}:${students.introduce}</p>
-                            
+
                     </div>
                 </li>
             </c:forEach>
