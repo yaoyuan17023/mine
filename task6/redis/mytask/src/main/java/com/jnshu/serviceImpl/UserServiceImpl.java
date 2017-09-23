@@ -41,7 +41,8 @@ public class UserServiceImpl implements UserService {
 //        MemcachedUtil.set("users",users);
 //        System.out.println(MemcachedUtil.get("users"));
 //        return userMapper.userAll();
-        Jedis redis =  RedisUtil.getJedis();
+//        Jedis redis = new Jedis("127.0.0.1",6379);
+        Jedis redis=RedisUtil.getJedis();
         if(redis.get("users")==null) {
             List user = userMapper.userAll();
             redis.set("users".getBytes(), SerializeUtil. serialize(user));
@@ -50,6 +51,7 @@ public class UserServiceImpl implements UserService {
         }else{
             System.out.println("这是缓存");
             byte[] value = redis.get("users".getBytes());
+            redis.close();
             return (List)SerializeUtil. unserialize(value);
         }
     }
