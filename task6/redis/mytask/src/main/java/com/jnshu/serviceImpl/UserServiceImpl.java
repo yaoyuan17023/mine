@@ -37,10 +37,15 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> userAll(){
-//        List<User> users=userMapper.userAll();
-//        MemcachedUtil.set("users",users);
-//        System.out.println(MemcachedUtil.get("users"));
-//        return userMapper.userAll();
+//        if (MemcachedUtil.get("users")==null){
+//            List users=userMapper.userAll();
+//            MemcachedUtil.set("users",users);
+//            System.out.println("数据库");
+//            return users;
+//        }else {
+//            System.out.println("缓存");
+//         return (List)MemcachedUtil.get("users");
+//        }
 //        Jedis redis = new Jedis("127.0.0.1",6379);
         Jedis redis=RedisUtil.getJedis();
         if(redis.get("users")==null) {
@@ -60,10 +65,9 @@ public class UserServiceImpl implements UserService {
     }
     public int insert(String user, String password) {
         Integer i=userMapper.insert(user,password);
-        User user1=userMapper.selectByName(user);
-        System.out.println(user1);
-        MemcachedUtil.set("users",user1);
-        System.out.println(MemcachedUtil.get("users"));
+        List users=userMapper.userAll();
+        MemcachedUtil.set("users",users);
+        System.out.println("users="+MemcachedUtil.get("users"));
         return i;
     }
     public User select(int id){
