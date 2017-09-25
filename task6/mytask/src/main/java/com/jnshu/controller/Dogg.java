@@ -166,8 +166,8 @@ public class Dogg {
     }
 
     @RequestMapping("/user/list")
-    public String list(Map<String,Object> map){
-        map.put("users",userService.userAll());
+    public String list(Model model){
+        model.addAttribute("users",userService.userAll());
         return "list";
     }
 }
