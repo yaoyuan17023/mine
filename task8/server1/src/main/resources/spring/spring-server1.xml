@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <!-- RMI服务端 -->
+    <!-- RMI服务端远程接口实现类 -->
+    <bean id="serviceExporter" class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <!-- 将远程接口实现类对象设置到RMI服务中 -->
+        <property name="serviceName" value="StudentServiceImpl" />
+        <!-- 设置RMI服务名，为RMI客户端依据此服务名获取远程接口实现类对象引用奠定基础 -->
+        <property name="service" ref="StudentService" />
+        <!-- 将远程接口设置为RMI服务接口 -->
+        <property name="serviceInterface" value="com.jnshu.service.StudentService" />
+        <!-- 为RMI服务端远程对象注册表设置端口号-->
+        <property name="registryPort" value="11010" />
+        <property name="servicePort" value="11010" />
+    </bean>
+    <!--端口11010-->
+
+    <bean id="StudentService" class="com.jnshu.serviceImpl.StudentServiceImpl" />
+</beans>
